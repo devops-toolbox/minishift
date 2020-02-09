@@ -8,10 +8,10 @@ minishift: Minishift
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.minishift](https://galaxy.ansible.com/devops-toolbox.minishift)
+[https://galaxy.ansible.com/devopstoolbox.minishift](https://galaxy.ansible.com/devopstoolbox.minishift)
 
 ```bash
-ansible-galaxy install devops-toolbox.minishift
+ansible-galaxy install devopstoolbox.minishift
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: minishift is configured
       import_role:
-        name: devops-toolbox.minishift
+        name: devopstoolbox.minishift
       vars:
         minishift_packages_state: present
         minishift_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)

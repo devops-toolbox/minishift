@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+minishift_repos_create: "{{ _minishift_repos_create['all']
+  | union ( _minishift_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+minishift_repos_download: "{{ _minishift_repos_download['all']
+  | union ( _minishift_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+minishift_templates_copy: "{{ _minishift_templates_copy['all']
+  | union ( _minishift_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+minishift_services_enable: "{{ _minishift_services_enable['all']
+  | union ( _minishift_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+minishift_selinux_enable: "{{ _minishift_selinux_enable['all']
+  | union ( _minishift_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+minishift_packages_remove: "{{ _minishift_packages_remove['all']
+  | union ( _minishift_packages_remove[my_os]
+  | default([]) ) }}"
+minishift_packages_repos: "{{ _minishift_packages_repos['all']
+  | union ( _minishift_packages_repos[my_os]
+  | default([]) ) }}"
+minishift_packages_prereq: "{{ _minishift_packages_prereq['all']
+  | union ( _minishift_packages_prereq[my_os]
+  | default([]) ) }}"
+minishift_packages_install: "{{ _minishift_packages_install['all']
+  | union ( _minishift_packages_install[my_os]
+  | default([]) ) }}"

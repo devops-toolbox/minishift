@@ -1,0 +1,27 @@
+---
+# Install minishift packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ minishift_packages_remove }}"
+    state: absent
+  become: true
+  when: minishift_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ minishift_packages_repos }}"
+    state: "{{ minishift_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ minishift_packages_prereq }}"
+    state: "{{ minishift_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ minishift_packages_install }}"
+    state: "{{ minishift_packages_state }}"
+  become: true

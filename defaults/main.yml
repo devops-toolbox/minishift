@@ -1,0 +1,19 @@
+---
+# defaults file for minishift
+
+minishift_packages_state: present
+minishift_remove_packages: true
+minishift_enable_service: true
+minishift_enable_selinux: true
+minishift_copy_templates: true
+minishift_firewall_configure: true
+minishift_firewall_rules:
+  - service: ssh
+  - port: 3389
+minishift_users:
+  - user: devops
+    group: docker
+minishift_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true
